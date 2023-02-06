@@ -117,7 +117,7 @@ class screen1 extends StatelessWidget {
                           ]),
                       Packagecard(
                           rating: 4.8,
-                          image: "Kuta.png",
+                          image: "Kuta.jpeg",
                           place: "Kuta Resort",
                           price: 20000),
                       Packagecard(
