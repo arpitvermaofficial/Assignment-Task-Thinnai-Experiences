@@ -94,7 +94,7 @@ class _Categorycard2State extends State<Categorycard2> {
         ),
         Positioned(
           top: 5,
-          left: 70,
+          left: size.width * 0.2,
           child: ElevatedButton(
             style: ButtonStyle(
               backgroundColor: MaterialStateProperty.all(categorycard2clr),
