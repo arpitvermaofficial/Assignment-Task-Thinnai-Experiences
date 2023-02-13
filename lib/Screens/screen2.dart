@@ -6,7 +6,7 @@ import '../components/widgets.dart';
 
 const Color colorscr2 = Colors.white;
 
-class screen2 extends StatelessWidget {
+class screen2 extends StatefulWidget {
   const screen2(
       {Key? key,
       required this.place,
@@ -20,6 +20,14 @@ class screen2 extends StatelessWidget {
   final double rating;
   final String image;
   final int price;
+
+  @override
+  State<screen2> createState() => _screen2State();
+}
+
+bool selectedcard2 = false;
+
+class _screen2State extends State<screen2> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -29,7 +37,7 @@ class screen2 extends StatelessWidget {
           decoration: BoxDecoration(
               image: DecorationImage(
                   image: AssetImage(
-                    "assets/$image",
+                    "assets/${widget.image}",
                   ),
                   fit: BoxFit.fill)),
         ),
@@ -37,11 +45,13 @@ class screen2 extends StatelessWidget {
           actions: [
             IconButton(
                 onPressed: () {
-                  Navigator.pop(context);
+                  setState(() {
+                    selectedcard2 = !selectedcard2;
+                  });
                 },
                 icon: Icon(
                   Icons.favorite_border,
-                  color: colorscr2,
+                  color: selectedcard2 ? Colors.red : Colors.white,
                 ))
           ],
           backgroundColor: Colors.transparent,
@@ -51,7 +61,7 @@ class screen2 extends StatelessWidget {
           child: Container(
             padding: EdgeInsets.all(20),
             width: size.width,
-            height: size.height * 0.3,
+            height: size.height * 0.4,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -59,7 +69,7 @@ class screen2 extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "$place",
+                      "${widget.place}",
                       style: TextStyle(
                           fontSize: 20,
                           color: colorscr2,
@@ -72,7 +82,7 @@ class screen2 extends StatelessWidget {
                           color: colorscr2,
                         ),
                         Text(
-                          "$location",
+                          "${widget.location}",
                           style: TextStyle(fontSize: 15, color: colorscr2),
                         ),
                       ],
@@ -89,12 +99,14 @@ class screen2 extends StatelessWidget {
                   ),
                 ),
                 Ratingstar(
-                    ratingcolor: Colors.yellow, rating: rating, ratingsize: 15),
+                    ratingcolor: Colors.yellow,
+                    rating: widget.rating,
+                    ratingsize: 15),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "₹$price/person",
+                      "₹${widget.price}/person",
                       style: TextStyle(
                           fontSize: 15,
                           color: colorscr2,
