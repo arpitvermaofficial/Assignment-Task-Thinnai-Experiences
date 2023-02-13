@@ -31,6 +31,7 @@
   
   <br>
   
+
   ## 📸 Screenshots
  
 
@@ -39,11 +40,9 @@
 
 
 
-
-
 ||||
 |:----------------------------------------:|:-----------------------------------------:|:-----------------------------------------:|
-| ![1](https://user-images.githubusercontent.com/99536186/217002259-1b11654d-6d50-415d-b53c-a2f24826e3b8.jpeg)| ![2](https://user-images.githubusercontent.com/99536186/217002319-b16cf800-9f17-4ae3-8471-353cc4831fe9.jpeg)| ![3)](https://user-images.githubusercontent.com/99536186/217002300-f1db8573-de05-4ff4-b708-84f19d7e817c.jpeg)|
+| ![1](https://user-images.githubusercontent.com/99536186/218515412-c0bf0822-2127-4161-8133-f585483d2eeb.jpeg)| ![2](https://user-images.githubusercontent.com/99536186/218515488-b23273dc-c555-4d8a-bb18-55ac71635a6d.jpeg)| ![3)](https://user-images.githubusercontent.com/99536186/218516728-fdb131cc-3950-4c03-ab0d-14e8d9bfcba7.jpeg)|
 
 
   
