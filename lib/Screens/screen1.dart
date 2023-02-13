@@ -22,7 +22,7 @@ class screen1 extends StatelessWidget {
                 padding: EdgeInsets.all(18),
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -78,29 +78,31 @@ class screen1 extends StatelessWidget {
                             )
                           ]),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           categorycard(imagename: "Beach.png", text: "Beach"),
                           categorycard(
                               imagename: "mountain.png", text: "Mountain"),
                         ],
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Categorycard2(
-                              price: 15000,
-                              place: "Kuta Beach",
-                              location: "Bali ,Indonasia",
-                              rating: 4.2,
-                              image: "Bali.png"),
-                          Categorycard2(
-                              price: 15000,
-                              place: "Baga Beach",
-                              location: "Goa India",
-                              rating: 4.2,
-                              image: "Baga.png"),
-                        ],
+                      Container(
+                        padding: EdgeInsets.only(top: 10, bottom: 5),
+                        height: size.height * 0.2,
+                        child: ListView.separated(
+                          scrollDirection: Axis.horizontal,
+                          separatorBuilder: (BuildContext context, int index) =>
+                              SizedBox(
+                            width: 12,
+                          ),
+                          itemBuilder: (BuildContext context, int index) =>
+                              Categorycard2(
+                                  price: price[index],
+                                  place: place[index],
+                                  location: location[index],
+                                  rating: rating[index],
+                                  image: image[index]),
+                          itemCount: place.length,
+                        ),
                       ),
                       Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -115,16 +117,24 @@ class screen1 extends StatelessWidget {
                               style: TextStyle(color: color, fontSize: 13),
                             )
                           ]),
-                      Packagecard(
-                          rating: 4.8,
-                          image: "Kuta.jpeg",
-                          place: "Kuta Resort",
-                          price: 20000),
-                      Packagecard(
-                          rating: 4.8,
-                          image: "Baga.png",
-                          place: "Baga Beach Reasort",
-                          price: 25000),
+                      Container(
+                        padding: EdgeInsets.only(top: 5, bottom: 5),
+                        height: size.height * 0.35,
+                        child: ListView.separated(
+                          scrollDirection: Axis.vertical,
+                          separatorBuilder: (BuildContext context, int index) =>
+                              SizedBox(
+                            height: 12,
+                          ),
+                          itemBuilder: (BuildContext context, int index) =>
+                              Packagecard(
+                                  price: price[index],
+                                  place: place[index],
+                                  rating: rating[index],
+                                  image: image[index]),
+                          itemCount: place.length,
+                        ),
+                      ),
                     ]),
               ),
             )));
